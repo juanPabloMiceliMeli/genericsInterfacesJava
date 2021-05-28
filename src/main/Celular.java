@@ -5,13 +5,6 @@ public class Celular implements iPrecedable<Celular>{
     private Integer numero;
     private Persona titular;
 
-    public static int compPorNombre(Celular s1, Celular s2){
-        return s1.titular.getNombre().compareTo(s2.titular.getNombre());
-    }
-
-    public static int compPorNumero(Celular s1, Celular s2){
-        return -s1.numero.compareTo(s2.numero);
-    }
 
     public Celular(Integer numero, Persona titular) {
         this.numero = numero;
@@ -39,8 +32,12 @@ public class Celular implements iPrecedable<Celular>{
         return this.titular.precedeA(celular.titular);
     }
 
-    public static int precedeA(Celular c1, Celular c2){
-        return c1.precedeA(c2);
+    public int compPorNombre(Celular c){
+        return this.titular.getNombre().compareTo(c.titular.getNombre());
+    }
+
+    public int compPorNumero(Celular c){
+        return -this.numero.compareTo(c.numero);
     }
 
     @Override

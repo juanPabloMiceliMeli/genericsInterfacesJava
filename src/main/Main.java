@@ -19,14 +19,13 @@ public class Main {
         Celular c4 = new Celular(456, p4);
         Celular[] celus = new Celular[]{c1,c2,c3,c4};
 
-        Method metodoNombre = Celular.class.getMethod("compPorNombre", Celular.class, Celular.class);
-        Method metodoNumero = Celular.class.getMethod("compPorNumero", Celular.class, Celular.class);
-        Method metodoOriginal = Celular.class.getMethod("precedeA", Celular.class, Celular.class);
+        Method metodoNombre = Celular.class.getMethod("compPorNombre", Celular.class);
+        Method metodoNumero = Celular.class.getMethod("compPorNumero", Celular.class);
 
 
         System.out.println("Entrada");
         StringUtil.printArray(celus);
-        SortUtil.ordenar(celus, metodoOriginal);
+        SortUtil.ordenar(celus);
 
         System.out.println("Ordenado por dni de la persona (original persona)");
         StringUtil.printArray(celus);
